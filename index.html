@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tarot Compendium</title>
+    <link rel="stylesheet" href="./tarot.css">
+    <link rel="icon" href="./assets/tarotIcon.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3fa994a8ab.js" crossorigin="anonymous"></script>
+    <script defer src="./tarot.js"></script>
+</head>
+<body>
+    <section data-aos="fade-right">
+        <nav>
+            <div class="left-side">
+                <img class="headerLogo" src="./assets/KD-left-transparent-svg.svg" alt="">
+            </div>
+
+            <figure>
+                <img id="personal-img" src="./assets/Kevin AI.jpeg" alt="">
+            </figure>
+
+            <div class="right-side">
+                <ul class="AboutInfo">
+                    <a class="link__hover-effect" href="javascript:void(0)">
+                        <li>About</li>
+                    </a>
+                    <a class="link__hover-effect" href="javascript:void(0)">
+                        <li>Blog</li>
+                    </a>
+                    <a class="link__hover-effect" href="javascript:void(0)">
+                        <li>Contact</li>
+                    </a>
+                </ul>
+
+                <a class="btn__menu--link" href="javascript:void(0)">
+                    <img onclick="openMenu()" src="./assets/hamburger menu.svg" alt="hammenu" class="btn__menu">
+                </a>
+
+                <div class="menu__backdrop">
+                    <button onclick="closeMenu()" class="btn__menu btn__menu--close">
+                        <img style="padding-right: 3px; cursor: pointer;" src="./assets/close.svg" alt="" class="btn__menu">
+                    </button>
+                    <ul class="menu__links">
+                        <li><a href="javascript:void(0)" class="nav__link" onclick="closeMenu()">About</a></li>
+                        <li><a href="javascript:void(0)" class="nav__link" onclick="closeMenu()">Blog</a></li>
+                        <li><a href="javascript:void(0)" class="nav__link" onclick="closeMenu()">Pricing</a></li>
+                        <li><a href="javascript:void(0)" class="nav__link" onclick="closeMenu()">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="nav__link" onclick="closeMenu()">Login</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <header>
+            <div class="header__left-side">
+                <h1>Become familiar with the Tarot Cards!</h1>
+                <p>An exciting understanding of yourself awaits! Tarot is the most popular divinity tool that can
+                    forecast and offer interpretations in love, career and finance whereas yes/no tarot is
+                     useful for answering users' questions in a fascinating way.
+                </p>
+                
+                <div class="searchBox">
+                    <input class="searchbar" type="search" placeholder="Ask a Question">
+                    <button class="searchbarButton">Answer</button>
+                </div>
+            </div>
+
+            <div class="header__right-side">
+                <figure>
+                    <img src="./assets/tarot with crystal ball display.png" alt="">
+                </figure>
+            </div>
+        </header>
+    </section>
+
+    <main data-aos="fade-left">
+        <div class="main__header">
+            <h2>The Rider-Watie Smith Deck</h2>
+
+            <select name="" id="filter" onchange="filterCards(event)">
+                <option value="">All</option>
+                <option value="MAJOR">Major Arcana</option>
+                <option value="MINOR">Minor Arcana</option>
+                <option value="FACE">Face Cards</option>
+            </select>
+        </div>
+
+        <div class="loading__background">
+            <i class="fa-solid fa-spinner"></i>
+        </div>
+
+        <div class="container">
+            <div class="row">
+              <div class="card__list">
+                <!-- <div class="card">
+                    <figure class="card__img--wrapper">
+                        <img src="./assets/Tarot back design.jpg" alt="" class="tarot__frontimg">
+                        <img src="./assets/tarotImages/majorArcana/Death.jpg" alt="" class="tarot__backimg">
+                    </figure>
+    
+                    <p class="tarot__name">The Fool</p>
+                    <p class="tarot__category">Major Arcana</p>
+                    <p class="tarot__number">0</p>
+                </div> -->
+              </div>
+            </div>
+        </div>
+    </main>
+
+    <footer data-aos="fade-up">
+        <div class="container">
+            <div class="row footer__row">
+                <a href="#" class="footer__anchor">
+                    <figure class="footer__logo--wrapper">
+                        <img class="footer__logo--img" src="./assets/KD-left-transparent-svg.svg" alt="">
+                    </figure>
+                    <span class="top">Back to top
+                        <img class="upArrow" src="./assets/Up arrow.svg" alt="arrow">
+                    </span>
+                </a>
+                <div class="footer__social--list">
+                    <a href="https://github.com/Kev1nM3N" target="_blank" class="
+                    footer__social--link
+                    link__hover-effect
+                    ">
+                        Github
+                    </a>
+                    <a href="#" class="
+                    footer__social--link
+                    link__hover-effect
+                    ">
+                        LinkedIn
+                    </a>
+                    <a href="#" class="
+                    footer__social--link
+                    link__hover-effect
+                    ">
+                        Contact
+                    </a>
+                    <a style="cursor: no-drop;" href="javascript:void(0)" class="
+                    footer__social--link
+                    link__hover-effect
+                    ">
+                        Resume
+                    </a>
+                </div>
+                <div class="footer__copyright">Copyright &#169; 2023 KD Design</div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
