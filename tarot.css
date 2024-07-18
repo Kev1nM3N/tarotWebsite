@@ -1,0 +1,783 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --Sand-Tan: #e1b382;
+    --Sand-Tan-Shadow: #c89666;
+    --Night-Blue: #2d545e;
+    --Day-Blue-Shadow: #2563eb;
+    --Dusty-White: #edf7f6;
+    --light-blue: #dbeafe;
+    --light-pink: #fce7f3;
+    --my-black: #27272a;
+    --mixed-colors: linear-gradient(var(--light-blue), var(--light-pink), var(--cosmic-latte));
+    --cosmic-latte: #fff8e7;
+    --footer-background-color: #1b2a4e;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+section {
+    background-image: var(--mixed-colors);
+}
+
+/* Nav Bar begins */
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    padding-top: 14px;
+}
+
+.btn__menu, .btn__menu--link {
+    display: none;
+}
+
+
+#personal-img {
+    width: 50px;
+    border-radius: 99px;
+    border: 2px solid var(--Night-Blue);
+    animation: animate-pfp 800ms 200ms backwards;
+    transition: all 300ms ease;
+}
+
+#personal-img:hover {
+    scale: 1.1;
+}
+
+@keyframes animate-pfp {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.left-side {
+    height: 100%;
+    min-width: 200px;
+    display: flex;
+}
+
+.right-side {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    font-size: large;
+    color: var(--my-black);
+    font-weight: 700;
+    margin: 0 15px;
+    transition: all 200ms ease;
+}
+
+a:hover {
+    color: var(--Day-Blue-Shadow);
+}
+
+.link__hover-effect {
+    position: relative;
+}
+
+.link__hover-effect::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    background-color: var(--Day-Blue-Shadow);
+    width: 0;
+    right: 0;
+    transition: all 300ms ease;
+}
+
+.link__hover-effect:hover::before {
+    left: 0;
+    width: 100%;
+}
+
+@keyframes slidein {
+      0% {
+        transform: translateX(100%);
+      }
+
+      70% {
+        transform: translateX(-40%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+}
+
+.menu__backdrop {
+    position: absolute;
+    height: 400px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 12;
+    margin: 1.5rem 1rem;
+    border-radius: 0.5rem;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(226, 232, 240);
+    background-color: var(--cosmic-latte);
+    padding: 2rem;
+    text-align: center;
+    color: rgb(26 32 44);
+    visibility: hidden;
+}
+
+.menu__open .menu__backdrop {
+    visibility: visible;
+    animation: slidein 300ms ease;
+}
+
+.menu__links {
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.menu__links li {
+    margin: 0.5rem 0;
+}
+
+.menu__links li:nth-child(6) {
+    margin-top: 1.5rem;
+}
+
+.menu__links .nav__link {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+}
+
+.btn__menu--close {
+    position: absolute;
+    left: 18px;
+    top: 24px;
+}
+
+/* Header */
+
+header {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.header__left-side {
+    width: 55%;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__right-side {
+    width: 45%;
+}
+
+.header__right-side img {
+    width: 75%;
+}
+
+header h1 {
+    font-size: 56px;
+    color: var(--my-black);
+}
+
+header p {
+    font-size: 20px;
+    color: #3f3f46;
+    line-height: 30px;
+    padding: 0 48px;
+}
+
+header h1, header p {
+    margin: 12px 0;
+}
+
+.searchBox {
+    position: relative;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.searchbar {
+    width: 100%;
+    max-width: 500px;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 99px;
+    border: 2px solid rgba(45, 84, 94, 0.1);
+    padding: 0 30px 0 30px;
+    transition: all 300ms ease;
+}
+
+.searchbar::placeholder {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.searchbar:hover {
+    border-color: rgb(160 174 192);
+}
+
+
+.searchbar:focus {
+    border-color: pink;
+    outline: 0;
+}
+
+.searchbarButton {
+    margin-top: 16px;
+    padding: 0.8rem 5rem;
+    border-radius: 22px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 800;
+    transition: all 300ms ease;
+    cursor: pointer;
+    background-color: var(--Day-Blue-Shadow);
+    color: var(--Dusty-White);
+}
+
+.searchbarButton:hover {
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1);
+    background-color: rgb(29 78 216 / 1);
+}
+
+/* Tarot Cards */
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cosmic-latte);
+}
+
+.loading__background {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-spinner {
+    font-size: 90px;
+    color: var(--Day-Blue-Shadow);
+    animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.main__header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#filter {
+    padding-right: 32px;
+    padding-left: 8px;
+    height: 1.5rem;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.main__header h2 {
+    color: var(--my-black);
+}
+
+.container {
+    display: flex;
+    padding: 12px 0;
+    text-align: center;
+}
+
+.row {
+    /* max-width: 800px; */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.card__list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc(100% / 4 - 40px);
+    margin: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card__img--wrapper {
+    position: relative;
+    width: fit-content;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    margin-bottom: 6px;
+}
+
+.card__img--wrapper:hover {
+    transform: rotateY(180deg);
+}
+
+.tarot__name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.tarot__category {
+    font-size: 16px;
+}
+
+.tarot__frontimg {
+    width: 180px;
+    height: 100%;
+    cursor: pointer;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 9px;
+}
+
+.tarot__backimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transform: rotateY(180deg);
+    border-radius: 9px;
+}
+
+/* Footer */
+
+footer {
+    position: relative;
+    /* background-color: var(--footer-background-color); */
+    background-image: linear-gradient(var(--cosmic-latte), var(--light-pink), var(--light-blue));
+    display: flex;
+    justify-content: center;
+    padding: 6% 0;
+}
+
+.footer__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__anchor {
+    position: relative;
+}
+
+.footer__anchor:hover .top {
+    opacity: 1;
+    transform: translateX(6rem);
+}
+
+.top {
+    position: absolute;
+    right: 0;
+    bottom: 2.5rem;
+    transition: all 300ms ease;
+    z-index: 1;
+    opacity: 0;
+}
+
+.upArrow {
+    width: 16px;
+}
+
+.footer__logo--img {
+    width: 180px;
+    /* filter: invert(1); */
+}
+
+.footer__social--list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 24px 0;
+}
+
+.footer__copyright {
+    margin: 12px 0;
+}
+
+.footer__social--link,
+.footer__copyright {
+    color: var(--my-black);
+}
+
+/*
+
+LARGE AND SMALL MOBILE DEVICES
+
+*/
+
+@media (max-width: 1285px) {
+    .searchbarButton {
+        padding: 0.8rem 4.5rem;
+        right: 4.5rem;
+    }
+}
+
+@media (max-width: 1250px) {
+    .searchbar {
+        padding: 0 14rem 0 30px;
+    }
+    
+    .searchbarButton {
+        padding: 0.8rem 4.2rem;
+        right: 4.1rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    header h1 {
+        font-size: 48px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    .searchbar {
+        font-size: 16px;
+        max-width: 400px;
+    }
+
+    .searchbar::placeholder {
+        font-size: 16px;
+    }
+
+    .searchbarButton {
+        top: 5px;
+        right: 3.8rem;
+        padding: 1rem 4rem;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1030px) {
+    .searchbar {
+        padding: 0 12.8rem 0 25px;
+    }
+
+    .searchbarButton {
+        right: 3.5rem;
+    }
+}
+
+@media (max-width: 950px) {
+    li, a {
+        font-size: 16px;
+    }
+
+    .searchbar {
+        max-width: 350px;
+    }
+
+    .searchbarButton {
+        right: 3.3rem;
+    }
+
+    .card {
+        width: calc(33.3% - 40px);
+    }
+
+    .tarot__frontimg {
+        width: 170px;
+    }
+
+    .tarot__name {
+        font-size: 18px;
+    }
+
+    .tarot__category, .tarot__number {
+        font-size: 14px;
+    }
+
+    .footer__copyright {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 900px) {
+    .searchbarButton {
+        right: 3.1rem;
+    }
+}
+
+@media (max-width: 850px) {
+    nav figure {
+        transform: translateX(-18px);
+    }
+
+    .left-side {
+        min-width: 100px;
+    }
+
+    .left-side img {
+        width: 90%;
+    }
+
+    .AboutInfo {
+        display: none;
+    }
+
+    .btn__menu {
+        display: block;
+        width: 35px;
+        transition: all 200ms ease;
+    }
+
+    .btn__menu--link {
+        display: block;
+    }
+
+    .btn__menu:hover {
+        filter: invert(1.5);
+    }
+
+    header {
+        margin-top: 12px;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .header__left-side {
+        width: 90%;
+    }
+
+
+    header h1 {
+        font-size: 36px;
+        margin-top: 12px;
+        margin-bottom: 0;
+    }
+
+    header p {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 0 36px;
+    }
+
+    .searchbar {
+        padding: 0px 1rem 0 18px;
+        height: 50px;
+    }
+
+    .searchbar::placeholder {
+        text-align: center;
+    }
+
+    .searchbarButton {
+        position: static;
+        margin-top: 10px;
+        padding: 0.7rem 5.5rem;
+    }
+
+    .searchBox {
+        margin: 12px 0;
+    }
+
+    .tarot__frontimg {
+        width: 155px;
+    }
+
+    .footer__logo--img {
+        width: 155px;
+    }
+}
+
+@media (max-width: 700px) {
+    nav figure {
+        transform: translateX(-16px);
+    }
+
+    .header__right-side img {
+        width: 90%;
+    }
+        
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        padding: 0 22px;
+        font-size: 15px;
+    }
+
+    .searchbarButton {
+        padding: 0.7rem 3.3rem;
+    }
+
+    .main__header h2 {
+        font-size: 20px;
+    }
+
+    .tarot__name {
+        font-size: 17px;
+    }
+
+    .footer__logo--img {
+        width: 140px;
+    }
+}
+
+@media (max-width: 560px) {
+    nav figure {
+        transform: translateX(-18px);
+    }
+
+    header p {
+        padding: 0;
+    }
+
+    .card {
+        width: calc(100% / 2 - 40px);
+    }
+
+    .footer__logo--img {
+        width: 120px;
+    }
+
+    .top {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .main__header h2 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 430px) {
+    .left-side img {
+        width: 80%;
+    }
+
+    .card {
+        width: calc(100% / 1 - 40px);
+    }
+
+    .footer__social--link {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .right-side a img {
+        width: 25px;
+    }
+
+    .left-side img {
+        width: 70%;
+    }
+
+    .header__right-side img {
+        width: 150%;
+        transform: translate(-37px);
+    }
+
+    nav figure {
+        transform: translateX(-22px);
+    }
+
+    .searchbarButton {
+        padding: 0.7rem 2rem;
+    }
+
+    .main__header h2 {
+        display: none;
+    }
+
+    .footer__social--list {
+        display: none;
+    }
+}
+
+@media (max-width: 330px) {
+    nav figure {
+        transform: translateX(-28px);
+    }
+}
+
+@media (max-width: 300px) {
+    .left-side img {
+        width: 50%;
+    }
+
+    nav figure {
+        transform: translateX(-32px);
+    }
+
+    .right-side a img {
+        transform: translateX(-8px);
+    }
+
+    .header__left-side {
+        width: 93%;
+    }
+}
